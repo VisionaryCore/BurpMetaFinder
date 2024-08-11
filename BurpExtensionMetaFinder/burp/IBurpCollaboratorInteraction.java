@@ -15,16 +15,14 @@ import java.util.Map;
  * This interface represents a network interaction that occurred with the Burp
  * Collaborator server.
  */
-public interface IBurpCollaboratorInteraction
-{
+public interface IBurpCollaboratorInteraction {
 
     /**
-     * This method is used to retrieve a property of the interaction. Properties
-     * of all interactions are: interaction_id, type, client_ip, and time_stamp.
-     * Properties of DNS interactions are: query_type and raw_query. The
-     * raw_query value is Base64-encoded. Properties of HTTP interactions are:
-     * protocol, request, and response. The request and response values are
-     * Base64-encoded.
+     * This method retrieves a specific property of the interaction. Common properties
+     * across all interactions include: interaction_id, type, client_ip, and time_stamp.
+     * For DNS interactions, properties include: query_type and raw_query, where raw_query
+     * is Base64-encoded. For HTTP interactions, properties include: protocol, request, 
+     * and response, both request and response are Base64-encoded.
      *
      * @param name The name of the property to retrieve.
      * @return A string representing the property value, or null if not present.
@@ -32,8 +30,7 @@ public interface IBurpCollaboratorInteraction
     String getProperty(String name);
 
     /**
-     * This method is used to retrieve a map containing all properties of the
-     * interaction.
+     * This method retrieves a map containing all properties of the interaction.
      *
      * @return A map containing all properties of the interaction.
      */
